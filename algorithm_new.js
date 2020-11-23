@@ -1,18 +1,43 @@
 // Array with codes of all possible diseases
 const possibleDiseases = [];
 
+// TODO
+const possibleNotes = [
+  {
+    type: "warning, info, etc.",
+    significance: "2",
+    disablePossible: true,
+    header:
+      "This is a header informing you about a specific disease or irregularity detected in your nutrition profile information",
+    text: "This is a notification text about a specific thing",
+  },
+];
+
 // Object containing example data
 const inputData = {
-  age: { value: 27, unit: "years", name: "Alter" },
+  age: { value: 34, unit: "years", name: "Alter" },
   sex: { value: "m", unit: "gender", name: "Biologisches Geschlecht" },
-  weight: { value: 83.6, unit: "kg", name: "Gewicht" },
-  height: { value: 184, unit: "cm", name: "Körpergröße" },
+  weight: { value: 85, unit: "kg", name: "Gewicht" },
+  height: { value: 175, unit: "cm", name: "Körpergröße" },
   // PAL will later be replaced by proper calculation function
   pal: { value: 1.4, unit: "pal", name: "PAL (Physical Activity Level)" },
   diseases: { value: ["disease1", "disease2"], name: "Krankheiten" },
   gfr: { value: 1, name: "Stadium GFR", unit: "stadium" },
   urin: "placeholder",
   blood: "placeholder",
+  metVigorousActivity: {
+    value: 20,
+    unit: "minutes",
+    name: "Vigorous Activity (pro Tag)",
+  },
+  metModerateActivity: {
+    value: 77,
+    unit: "minutes",
+    name: "Moderate and Transport Activity (pro Tag)",
+  },
+  // TODO: Update data format of GPAQ results
+  met: { value: [], name: "GPAQ results (MET scores)" },
+  gpaq: { value: [{}] },
 };
 
 class NutritionProfile {
@@ -56,6 +81,23 @@ class NutritionProfile {
       // Start all calculations to fill nutrition profile
       this.addBMI();
       this.addRestEnergyDemand();
+
+      // Additionally check for MET vigorous and normal activity (results from GPAQ, needed for better PAL value) and update pal value if applicable before calculating total energy demand
+      if (
+        input.metVigorousActivity &&
+        input.metVigorousActivity.value &&
+        input.metVigorousActivity.unit == "minutes" &&
+        input.metModerateActivity &&
+        input.metModerateActivity.value &&
+        input.metModerateActivity.unit == "minutes"
+      ) {
+        // Assign variable
+        this.metVigorousActivity = input.metVigorousActivity;
+        this.metModerateActivity = input.metModerateActivity;
+        // Update PAL value using MET (GPAQ result)
+        this.updatePAL();
+      }
+
       this.addTotalEnergyDemand();
       this.addProteinDemand();
       this.addFatsDemand();
@@ -281,6 +323,143 @@ class NutritionProfile {
   //________________
   // Adds minerals demand to nutrition profile
   addMinerals() {
+    // Minerals table
+    var minerals = {
+      vitaminA: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      thiamin: {
+        unit: "mg",
+        name: "Thiamin",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      riboflavin: {
+        unit: "mg",
+        name: "Riboflavin",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      niacin: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      vitaminB6: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      folat: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      vitaminC: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      calcium: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      phosphor: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      magnesium: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      eisen: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      iod: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      zink: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      vitaminD: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      vitaminE: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      vitaminK: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+      panthotensäure: {
+        unit: "mg",
+        name: "Vitamin A",
+        type: "averageWeek",
+        value: [1, 0.8, 1, 0.8, 1, 0.8],
+      },
+    };
+
+    // Get index based on age and gender (value between 0 and 5)
+    var index = 0;
+    if (this.age.value >= 51 && this.age.value < 65) {
+      index = 2;
+    } else if (this.age.value >= 65) {
+      index = 4;
+    }
+    // Increase index if female
+    if (this.sex.value == "f") {
+      index += 1;
+    }
+
+    // Iterate through minerals table selecting the value based on index
+    for (var mineral in minerals) {
+      // Get mineral object
+      var mineralToAdd = minerals[mineral];
+      // Select values depending on index
+      if (mineralToAdd.value) {
+        mineralToAdd.value = mineralToAdd.value[index];
+      }
+      if (mineralToAdd.minValue) {
+        mineralToAdd.minValue = mineralToAdd.minValue[index];
+      }
+      if (mineralToAdd.maxValue) {
+        mineralToAdd.maxValue = mineralToAdd.maxValue[index];
+      }
+      // Store and add updated mineral object to nutrition profile
+      this[mineral] = this.nutritionProfile[mineral] = mineralToAdd;
+    }
+
+    // Special cases with diseases
     // Add calcium (check for ostheoporose and renale osteopathie)
     var calciumMg = 1000;
     if (
@@ -379,6 +558,38 @@ class NutritionProfile {
         name: "Harnsäure",
         type: "max",
       };
+  }
+
+  // HELPER: MET TO PAL CALCULATOR
+  //________________
+  // Updates pal value based on results of GPAQ questionnaire (MET minutes), calculation based on the following paper: An Easy Approach to Calculating Estimated Energy Requirements (Gerrior et al.)
+  updatePAL() {
+    // Set factors needed for calculation
+    const factorModerateActivity = 4;
+    const factorVigorousActivity = 8;
+    const basePAL = 1.1;
+
+    // Calculate deltas
+    const deltaPalModerateActivity = this.metToPal(
+      factorModerateActivity,
+      this.metModerateActivity.value
+    );
+    const deltaPalVigorousActivity = this.metToPal(
+      factorVigorousActivity,
+      this.metVigorousActivity.value
+    );
+
+    // Calculate PAL by adding up the deltas
+    const pal = basePAL + deltaPalVigorousActivity + deltaPalModerateActivity;
+    console.log("Updated PAL value using GPAQ results, new PAL is: " + pal);
+  }
+
+  // Converts single met activity values into PAL value using the met factor (4 or 8) and the duration of the activity
+  metToPal(metValue, durationMinutes) {
+    const deltaPal =
+      ((metValue - 1) * ((1.15 / 0.9) * (durationMinutes / 1440))) /
+      (this.restEnergy.value / (0.0175 * 1440 * this.weight.value));
+    return deltaPal;
   }
 }
 
