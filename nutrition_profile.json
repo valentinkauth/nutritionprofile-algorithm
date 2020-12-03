@@ -1,0 +1,389 @@
+{
+  "age": { "value": 34, "unit": "years", "name": "Alter" },
+  "sex": { "value": "m", "unit": "gender", "name": "Biologisches Geschlecht" },
+  "weight": { "value": 85, "unit": "kg", "name": "Gewicht" },
+  "height": { "value": 175, "unit": "cm", "name": "Körpergröße" },
+  "pal": {
+    "value": 1.4,
+    "unit": "pal",
+    "name": "PAL (Physical Activity Level)"
+  },
+  "diseases": { "value": ["disease1", "disease2"], "name": "Krankheiten" },
+  "gfr": { "value": 1, "name": "Stadium GFR", "unit": "stadium" },
+  "urin": "placeholder",
+  "blood": "placeholder",
+  "nutritionProfile": {
+    "bmi": { "value": 27.8, "unit": "kg/m2", "name": "BMI (Body Mass Index)" },
+    "restEnergy": {
+      "value": 1842.9498805,
+      "name": "Ruheenergiebedarf",
+      "unit": "kcal",
+      "type": "max"
+    },
+    "totalEnergy": {
+      "value": 2580.1298327,
+      "unit": "kcal",
+      "name": "Gesamtenergiebedarf",
+      "type": "max"
+    },
+    "protein": {
+      "value": 68,
+      "unit": "g",
+      "name": "Eiweißbedarf",
+      "type": "max"
+    },
+    "fats": {
+      "value": 83.22999460322579,
+      "unit": "g",
+      "name": "Fettbedarf",
+      "type": "max"
+    },
+    "saturatedFats": {
+      "value": 27.7433315344086,
+      "unit": "g",
+      "name": "Gesättigte Fettsäuren (GFS)",
+      "type": "max"
+    },
+    "singleUnsaturatedFats": {
+      "value": 27.7433315344086,
+      "unit": "g",
+      "name": "Einfach ungesättigte Fettsäuren (EUFS)",
+      "type": "maxRange",
+      "minValue": 27.7433315344086,
+      "maxValue": 36.06633099473118
+    },
+    "multipleUnsaturatedFats": {
+      "value": 19.420332074086023,
+      "unit": "g",
+      "name": "Mehrfach ungesättigte Fettsäuren (MUFS)",
+      "type": "maxRange",
+      "minValue": 19.420332074086023,
+      "maxValue": 27.7433315344086
+    },
+    "transFats": {
+      "value": 2.77433315344086,
+      "unit": "g",
+      "name": "Transfettsäuren",
+      "type": "max"
+    },
+    "carbs": {
+      "value": 372.5099714365855,
+      "unit": "g",
+      "name": "Kohlenhydratbedarf",
+      "type": "max"
+    },
+    "vitaminA": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "thiamin": {
+      "unit": "mg",
+      "name": "Thiamin",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "riboflavin": {
+      "unit": "mg",
+      "name": "Riboflavin",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "niacin": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "vitaminB6": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "folat": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "vitaminC": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "calcium": {
+      "value": 1000,
+      "unit": "mg",
+      "name": "Calcium",
+      "type": "averageWeek"
+    },
+    "phosphor": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "magnesium": {
+      "value": 350,
+      "unit": "mg",
+      "name": "Magnesium",
+      "type": "max"
+    },
+    "eisen": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "iod": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "zink": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "vitaminD": {
+      "value": 20,
+      "unit": "µg",
+      "name": "Vitamin D (Calciferol)",
+      "type": "max"
+    },
+    "vitaminE": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "vitaminK": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "panthotensäure": {
+      "unit": "mg",
+      "name": "Vitamin A",
+      "type": "averageWeek",
+      "value": 1
+    },
+    "chlorid": {
+      "value": 2300,
+      "unit": "mg",
+      "name": "Chlorid",
+      "type": "averageWeek"
+    },
+    "potassium": {
+      "value": 4000,
+      "unit": "mg",
+      "name": "Kalium",
+      "type": "max"
+    },
+    "phosphate": {
+      "value": 700,
+      "unit": "mg",
+      "name": "Phosphat",
+      "type": "max"
+    },
+    "sodium": { "value": 1500, "unit": "mg", "name": "Natrium", "type": "max" },
+    "uricAcid": {
+      "value": 500,
+      "unit": "mg",
+      "name": "Harnsäure",
+      "type": "max"
+    }
+  },
+  "bmi": { "value": 27.8, "unit": "kg/m2", "name": "BMI (Body Mass Index)" },
+  "restEnergy": {
+    "value": 1842.9498805,
+    "name": "Ruheenergiebedarf",
+    "unit": "kcal",
+    "type": "max"
+  },
+  "metVigorousActivity": {
+    "value": 20,
+    "unit": "minutes",
+    "name": "Vigorous Activity (pro Tag)"
+  },
+  "metModerateActivity": {
+    "value": 77,
+    "unit": "minutes",
+    "name": "Moderate and Transport Activity (pro Tag)"
+  },
+  "totalEnergy": {
+    "value": 2580.1298327,
+    "unit": "kcal",
+    "name": "Gesamtenergiebedarf",
+    "type": "max"
+  },
+  "protein": {
+    "value": 68,
+    "unit": "g",
+    "name": "Eiweißbedarf",
+    "type": "max"
+  },
+  "fats": {
+    "value": 83.22999460322579,
+    "unit": "g",
+    "name": "Fettbedarf",
+    "type": "max"
+  },
+  "saturatedFats": {
+    "value": 27.7433315344086,
+    "unit": "g",
+    "name": "Gesättigte Fettsäuren (GFS)",
+    "type": "max"
+  },
+  "singleUnsaturatedFats": {
+    "value": 27.7433315344086,
+    "unit": "g",
+    "name": "Einfach ungesättigte Fettsäuren (EUFS)",
+    "type": "maxRange",
+    "minValue": 27.7433315344086,
+    "maxValue": 36.06633099473118
+  },
+  "multipleUnsaturatedFats": {
+    "value": 19.420332074086023,
+    "unit": "g",
+    "name": "Mehrfach ungesättigte Fettsäuren (MUFS)",
+    "type": "maxRange",
+    "minValue": 19.420332074086023,
+    "maxValue": 27.7433315344086
+  },
+  "transFats": {
+    "value": 2.77433315344086,
+    "unit": "g",
+    "name": "Transfettsäuren",
+    "type": "max"
+  },
+  "carbs": {
+    "value": 372.5099714365855,
+    "unit": "g",
+    "name": "Kohlenhydratbedarf",
+    "type": "max"
+  },
+  "vitaminA": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "thiamin": {
+    "unit": "mg",
+    "name": "Thiamin",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "riboflavin": {
+    "unit": "mg",
+    "name": "Riboflavin",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "niacin": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "vitaminB6": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "folat": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "vitaminC": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "calcium": {
+    "value": 1000,
+    "unit": "mg",
+    "name": "Calcium",
+    "type": "averageWeek"
+  },
+  "phosphor": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "magnesium": {
+    "value": 350,
+    "unit": "mg",
+    "name": "Magnesium",
+    "type": "max"
+  },
+  "eisen": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "iod": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "zink": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "vitaminD": {
+    "value": 20,
+    "unit": "µg",
+    "name": "Vitamin D (Calciferol)",
+    "type": "max"
+  },
+  "vitaminE": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "vitaminK": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "panthotensäure": {
+    "unit": "mg",
+    "name": "Vitamin A",
+    "type": "averageWeek",
+    "value": 1
+  },
+  "chlorid": {
+    "value": 2300,
+    "unit": "mg",
+    "name": "Chlorid",
+    "type": "averageWeek"
+  },
+  "potassium": { "value": 4000, "unit": "mg", "name": "Kalium", "type": "max" },
+  "phosphate": {
+    "value": 700,
+    "unit": "mg",
+    "name": "Phosphat",
+    "type": "max"
+  },
+  "sodium": { "value": 1500, "unit": "mg", "name": "Natrium", "type": "max" },
+  "uricAcid": { "value": 500, "unit": "mg", "name": "Harnsäure", "type": "max" }
+}

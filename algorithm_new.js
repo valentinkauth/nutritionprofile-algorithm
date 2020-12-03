@@ -1,3 +1,6 @@
+// Immport needed to write to JSON file
+var fs = require("fs");
+
 // Array with codes of all possible diseases
 const possibleDiseases = [];
 
@@ -594,5 +597,11 @@ class NutritionProfile {
 }
 
 var nutritionProfile = new NutritionProfile(inputData);
+
+// Generate JSON string and write to JSON file
+var nutritionProfileJSON = JSON.stringify(nutritionProfile);
+fs.writeFile("nutrition_profile.json", nutritionProfileJSON, "utf8", () => {
+  console.log("JSON written to file");
+});
 
 console.log(nutritionProfile.getNutritionProfile());
